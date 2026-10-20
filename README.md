@@ -7,7 +7,9 @@ The goal of the project is to investigate the information passively released by 
 ## References
 
 https://en.wikipedia.org/wiki/Log-distance_path_loss_model
+
 https://bleak.readthedocs.io/en/latest/index.html
+
 https://github.com/nordicsemi/bluetooth-numbers-database
 
 ## Project Documentation
