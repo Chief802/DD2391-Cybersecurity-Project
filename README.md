@@ -4,7 +4,11 @@
 
 The goal of the project is to investigate the information passively released by Bluetooth devices, with a focus on Bluetooth Low Energy (BLE) devices. These devices broadcast so called advertisement packages containing various kinds of data without any requirements of authentication to obtain it. This data is often assumed to be anonymous and not to be problematic for nearby observers to obtain. Therefore we investigate how much of the data broadcasted, and passively extracted from a nearby observer, can be used to identify and track the precise location of a specific physical device without its owners knowledge.
 
-## Reference
+## References
+
+https://en.wikipedia.org/wiki/Log-distance_path_loss_model
+https://bleak.readthedocs.io/en/latest/index.html
+https://github.com/nordicsemi/bluetooth-numbers-database
 
 ## Project Documentation
 
@@ -14,7 +18,11 @@ We developed and used two scripts to passively obtain broadcasted traffic from n
 
 For bluetoothscanner.py, it scans all nearby BLE devices over a 6-second window, and for each device we extract manufacturer specific data as well as MAC adress, advertised local name, signal strength (RSSI) and advertised service UUIDs. All detected devices are displayed, sorted by signal strength from furthest to closest. Each entry details obtained information about each device. The physical distance to each recorded device is estimated from RSSI and TX power by using a log distance path loss model.
 
-In deviceTracker.py, we can show that the information obtained passively as a nearby observer is enough to track the specific device in question in real time, without any requirements put on the nearby observer to e.g. connect to the device. advertisement are matched by the device MAC adress or device name and are able to smooth the signal via an rolling avergage over the last 50 RSSI readings. This allows us to create a distance estimate to the device which is constantly updated and allows for us to confirm that it is physical present and approximate its location.
+In deviceTracker.py, we can show that the information obtained passively as a nearby observer is enough to track the specific device in question in real time, without any requirements put on the nearby observer to e.g. connect to the device. advertisement are matched by the device MAC adress or device name and are able to smooth the signal via an rolling avergage over the last x amount of RSSI readings which can be set through command line arguments. This allows us to create a distance estimate to the device which is constantly updated and allows for us to confirm that it is physical present and approximate its location.
+The script also includes a library to check standard company identifiers in the raw data sent through BLE to further determine the manufacturer of a certain device to improve the fingerprinting of the initial script.
+
+An attempt was also made to connect multiple scanners through a central http server to trilaterate the position of a certain BLE device in relation to the locations of the used scanners. This approach
+however needed more testing to be conclusive of its ability to follow a device over time, and is therefore not yet sufficient to track a device better than the previous script.
 
 Python v3.7 or higher is needed for asyncio, as well as bleak for connecting to BLE devices.
 
