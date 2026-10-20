@@ -13,3 +13,8 @@ In the stage of code-writing, in addition to working on bluetoothscanner.py for 
 This also involved doing some manual tests to investigate the accuracy of bluetoothscanner.py, which told us that there could be inaccuracies in the exact distance of a device,
 even though it generally would be correct about how far away it was. 
 
+
+## Leo
+
+As stated we all investigated how best to fulfill the requirements of the project, as in finding the best tool. I investigated Python and using bleak in order to extract BLE data. This showed promise and could easily extract a lot of information from a lot of devices in close proximity. I also drafted and coded the ground work of the bluetoothscaner.py to get at rough idea of how it worked, what it could do and what the limitations where of the tool. It proved useful and was therefore selected as the basis of the project. I have then helped in completing the program and assisted in the creation of the deviceTracker.py extension program that is to continuously follow a selected device. I have also along with my peers tested these programs in order to find bugs and to see the extent of its usefulness.
+
