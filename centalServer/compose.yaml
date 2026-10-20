@@ -1,0 +1,7 @@
+services:
+  ble-server:
+    build: .
+    container_name: ble-central-server
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
