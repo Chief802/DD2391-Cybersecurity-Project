@@ -16,3 +16,19 @@ Python v3.7 or higher is needed for asyncio, as well as bleak for connecting to 
 
 ## Project Testing
 
+Testing was performed to assess the accuracy of device distance. A scanner device was placed 1.0m away from a device to be scanned, without physical objects in the way. Tests were performed 10 times to assess accuracy. The individual results for Signal Strength and Estimated Distance are shown in the table below.
+
+| Signal Strength (dBm) | Estimated Distance (m) |
+| :--- | :--- |
+| -62 | 1.3 |
+| -63 | 1.4 |
+| -56 | 0.8 |
+| -59 | 1.0 |
+| -61 | 1.2 |
+| -63 | 1.4 |
+| -60 | 1.1 |
+| -61 | 1.2 |
+| -67 | 2.1 |
+| -62 | 1.3 |
+
+The results show a mean distance of 1.28m, with a  population standard deviation at 0.325m. Overall, this suggests a rather large error. The program generally shows an object as being further away than it is, with extremes at 0.8 on the lower and at 2.1 at the highest end.
