@@ -14,6 +14,12 @@ This also involved doing some manual tests to investigate the accuracy of blueto
 even though it generally would be correct about how far away it was. 
 
 
+## Christoffer
+
+During the preparation stage I researched subjects related to BLE, to clarify possible routes to build our project on, and how BLE advertising works and which information a passive observer can obtain from it and constraints, including e.g. manufactrue specific data, address randomization, etc. I shared this with the group in discussions and suggested possible routes to go. 
+
+I investigated tools suitable for our projects including, mainly Wireshark, as it is the tool I've got most experience with, and extract BLE data from different Bluetooth devices in my environment that I own which gave an clearer picture of its limitations. I tested these programs in order to find potential bugs and adjustments needed to make as well as validate them. I wrote parts of project report in README.md, based on our code, test results, notes, including the problem statement, project documentation etc.
+
 ## Leo
 
 As stated we all investigated how best to fulfill the requirements of the project, as in finding the best tool. I investigated Python and using bleak in order to extract BLE data. This showed promise and could easily extract a lot of information from a lot of devices in close proximity. I also drafted and coded the ground work of the bluetoothscaner.py to get at rough idea of how it worked, what it could do and what the limitations where of the tool. It proved useful and was therefore selected as the basis of the project. I have then helped in completing the program and assisted in the creation of the deviceTracker.py extension program that is to continuously follow a selected device. I have also along with my peers tested these programs in order to find bugs and to see the extent of its usefulness.
